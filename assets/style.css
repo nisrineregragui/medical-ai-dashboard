@@ -1,0 +1,460 @@
+/* ─── Global ─────────────────────────────────────────── */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+html, body, [class*="css"] {
+    font-family: 'Inter', sans-serif !important;
+}
+
+/* Hide default Streamlit chrome */
+#MainMenu { visibility: hidden; }
+footer    { visibility: hidden; }
+header { background: transparent !important; }
+header [data-testid="stToolbar"] { visibility: hidden; }
+
+/* Remove default top padding */
+.block-container {
+    padding-top: 1.5rem !important;
+    padding-bottom: 2rem !important;
+    max-width: 100% !important;
+}
+
+/* ─── Sidebar ────────────────────────────────────────── */
+[data-testid="stSidebar"] {
+    background: #ffffff !important;
+    border-right: 1px solid #e8edf2 !important;
+}
+
+[data-testid="stSidebar"] > div:first-child {
+    padding: 0 !important;
+}
+
+.sidebar-brand {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 24px 16px 20px;
+    border-bottom: 1px solid #f0f4f8;
+}
+
+.brand-logo-wrap {
+    width: 52px;
+    height: 52px;
+    border-radius: 14px;
+    background: linear-gradient(135deg, #6c63ff 0%, #48cae4 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    margin-bottom: 10px;
+    box-shadow: 0 4px 14px rgba(108,99,255,0.3);
+}
+
+.brand-name {
+    font-size: 15px;
+    font-weight: 700;
+    color: #1a1f36;
+    line-height: 1.2;
+}
+
+.brand-tagline {
+    font-size: 11px;
+    color: #8a94a6;
+    margin-top: 2px;
+}
+
+/* Sidebar nav buttons */
+[data-testid="stSidebar"] .stButton > button {
+    width: 100%;
+    background: transparent !important;
+    border: none !important;
+    border-radius: 10px !important;
+    text-align: left !important;
+    padding: 10px 16px !important;
+    font-size: 13.5px !important;
+    font-weight: 500 !important;
+    color: #4a5568 !important;
+    transition: all 0.18s ease !important;
+    box-shadow: none !important;
+    margin: 2px 0 !important;
+}
+
+[data-testid="stSidebar"] .stButton > button:hover {
+    background: #f0f4ff !important;
+    color: #6c63ff !important;
+}
+
+.nav-active button {
+    background: #eeecff !important;
+    color: #6c63ff !important;
+    font-weight: 600 !important;
+}
+
+.sidebar-about {
+    background: #f8fafc;
+    border-radius: 12px;
+    padding: 14px 16px;
+    margin: 12px 12px 4px;
+    font-size: 12px;
+    color: #5a6478;
+    line-height: 1.6;
+}
+
+.sidebar-about strong {
+    font-size: 12.5px;
+    color: #1a1f36;
+    display: block;
+    margin-bottom: 4px;
+}
+
+.tech-stack-row {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    margin: 10px 12px 0;
+    flex-wrap: wrap;
+}
+
+.tech-badge {
+    background: #f0f4ff;
+    border-radius: 6px;
+    padding: 4px 10px;
+    font-size: 11px;
+    font-weight: 600;
+    color: #6c63ff;
+}
+
+/* ─── Page header ────────────────────────────────────── */
+.page-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 20px;
+}
+
+.page-title {
+    font-size: 24px;
+    font-weight: 700;
+    color: #1a1f36;
+    line-height: 1.2;
+}
+
+.page-subtitle {
+    font-size: 13.5px;
+    color: #8a94a6;
+    margin-top: 4px;
+}
+
+.theme-btn {
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 20px;
+    padding: 6px 14px;
+    font-size: 12px;
+    color: #4a5568;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+/* ─── Metric Cards ───────────────────────────────────── */
+.metric-card {
+    background: #ffffff;
+    border-radius: 14px;
+    padding: 18px 20px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    box-shadow: 0 1px 6px rgba(0,0,0,0.06);
+    border: 1px solid #f0f4f8;
+    height: 90px;
+}
+
+.metric-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+    flex-shrink: 0;
+}
+
+.metric-icon.purple { background: #eeecff; }
+.metric-icon.green  { background: #e6faf0; }
+.metric-icon.blue   { background: #e6f4ff; }
+.metric-icon.red    { background: #fff0f0; }
+
+.metric-value {
+    font-size: 26px;
+    font-weight: 700;
+    color: #1a1f36;
+    line-height: 1;
+}
+
+.metric-label {
+    font-size: 12px;
+    color: #8a94a6;
+    margin-top: 3px;
+    line-height: 1.3;
+}
+
+/* ─── Panel Cards ────────────────────────────────────── */
+.panel-card {
+    background: #ffffff;
+    border-radius: 16px;
+    padding: 22px 24px;
+    box-shadow: 0 1px 8px rgba(0,0,0,0.06);
+    border: 1px solid #f0f4f8;
+    margin-bottom: 16px;
+}
+
+.panel-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    margin-bottom: 18px;
+}
+
+.panel-icon {
+    width: 44px;
+    height: 44px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+    flex-shrink: 0;
+}
+
+.panel-icon.purple { background: linear-gradient(135deg, #6c63ff, #9d88ff); }
+.panel-icon.blue   { background: linear-gradient(135deg, #4facfe, #00f2fe); }
+
+.panel-title {
+    font-size: 16px;
+    font-weight: 700;
+    color: #6c63ff;
+    line-height: 1.2;
+}
+
+.panel-title.blue { color: #4facfe; }
+
+.panel-subtitle {
+    font-size: 12px;
+    color: #8a94a6;
+    margin-top: 2px;
+}
+
+/* ─── Input grid labels ──────────────────────────────── */
+.input-section-label {
+    font-size: 12px;
+    font-weight: 600;
+    color: #1a1f36;
+    margin-bottom: 6px;
+}
+
+.input-hint {
+    font-size: 11px;
+    color: #8a94a6;
+    margin-bottom: 12px;
+}
+
+/* ─── Predict button ─────────────────────────────────── */
+.predict-btn > button {
+    background: linear-gradient(135deg, #6c63ff 0%, #48cae4 100%) !important;
+    color: white !important;
+    border: none !important;
+    border-radius: 10px !important;
+    padding: 12px !important;
+    font-size: 14px !important;
+    font-weight: 600 !important;
+    width: 100% !important;
+    box-shadow: 0 4px 14px rgba(108,99,255,0.3) !important;
+    transition: all 0.2s ease !important;
+}
+
+.predict-btn-blue > button {
+    background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%) !important;
+    color: white !important;
+    border: none !important;
+    border-radius: 10px !important;
+    padding: 12px !important;
+    font-size: 14px !important;
+    font-weight: 600 !important;
+    width: 100% !important;
+    box-shadow: 0 4px 14px rgba(79,172,254,0.3) !important;
+}
+
+/* ─── Result box ─────────────────────────────────────── */
+.result-box {
+    background: #f8fafc;
+    border-radius: 12px;
+    padding: 14px 18px;
+    margin-top: 14px;
+}
+
+.result-label-title {
+    font-size: 11px;
+    font-weight: 600;
+    color: #8a94a6;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 4px;
+}
+
+.result-label-value {
+    font-size: 22px;
+    font-weight: 700;
+}
+
+.result-label-value.benign    { color: #22c55e; }
+.result-label-value.malignant { color: #ef4444; }
+.result-label-value.pneumonia { color: #ef4444; }
+.result-label-value.normal    { color: #22c55e; }
+
+.result-confidence {
+    font-size: 12px;
+    color: #8a94a6;
+    margin-top: 2px;
+}
+
+/* ─── Architecture pipeline ──────────────────────────── */
+.arch-section {
+    background: #f8fafc;
+    border-radius: 12px;
+    padding: 14px 18px;
+    margin-top: 14px;
+}
+
+.arch-title {
+    font-size: 12px;
+    font-weight: 700;
+    color: #6c63ff;
+    margin-bottom: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+}
+
+.arch-title.blue { color: #4facfe; }
+
+.arch-pipeline {
+    display: flex;
+    align-items: center;
+    gap: 0;
+    flex-wrap: wrap;
+    gap: 4px;
+}
+
+.arch-node {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 8px 12px;
+    text-align: center;
+    min-width: 52px;
+}
+
+.arch-node-val {
+    font-size: 16px;
+    font-weight: 700;
+    color: #1a1f36;
+    line-height: 1;
+}
+
+.arch-node-lbl {
+    font-size: 10px;
+    color: #8a94a6;
+    margin-top: 3px;
+    line-height: 1.2;
+}
+
+.arch-arrow {
+    color: #c0c9d8;
+    font-size: 14px;
+    padding: 0 2px;
+}
+
+/* ─── Upload area ────────────────────────────────────── */
+.upload-hint {
+    font-size: 12px;
+    color: #8a94a6;
+    text-align: center;
+    margin-top: 6px;
+}
+
+/* ─── Disclaimer ─────────────────────────────────────── */
+.disclaimer-box {
+    background: #fffbeb;
+    border: 1px solid #fde68a;
+    border-radius: 12px;
+    padding: 14px 20px;
+    margin-top: 20px;
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+}
+
+.disclaimer-icon { font-size: 18px; flex-shrink: 0; margin-top: 2px; }
+
+.disclaimer-title {
+    font-size: 13px;
+    font-weight: 700;
+    color: #92400e;
+    margin-bottom: 3px;
+}
+
+.disclaimer-text {
+    font-size: 12px;
+    color: #92400e;
+    line-height: 1.5;
+}
+
+/* ─── Streamlit overrides ────────────────────────────── */
+.stTabs [data-baseweb="tab-list"] {
+    background: #f0f4f8;
+    border-radius: 10px;
+    padding: 3px;
+    gap: 2px;
+}
+
+.stTabs [data-baseweb="tab"] {
+    border-radius: 8px !important;
+    font-size: 13px !important;
+    font-weight: 500 !important;
+    padding: 6px 18px !important;
+    color: #4a5568 !important;
+}
+
+.stTabs [aria-selected="true"] {
+    background: #ffffff !important;
+    color: #6c63ff !important;
+    font-weight: 600 !important;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.08) !important;
+}
+
+.stTabs [data-baseweb="tab-panel"] {
+    padding: 12px 0 0 !important;
+}
+
+div[data-testid="stNumberInput"] label,
+div[data-testid="stTextInput"] label {
+    font-size: 12px !important;
+    font-weight: 600 !important;
+    color: #4a5568 !important;
+}
+
+/* File uploader custom */
+[data-testid="stFileUploader"] {
+    border: 2px dashed #d0d7e2 !important;
+    border-radius: 12px !important;
+    padding: 12px !important;
+}
+
+/* Horizontal divider light */
+hr { border-color: #f0f4f8 !important; }
+
+/* Plotly chart background transparent */
+.js-plotly-plot .plotly .svg-container {
+    background: transparent !important;
+}

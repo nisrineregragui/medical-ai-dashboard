@@ -3,9 +3,6 @@
 An AI-powered medical diagnosis system featuring deep learning models for early disease detection and classification. Built with a minimalist, functional, and modern UI using Streamlit.
 
 ## Screenshots
-
-*(Add your screenshots here by replacing the placeholders below)*
-
 <div align="center">
   <img src="assets/image.png" alt="Dashboard Overview" width="800"/>
   <br>
